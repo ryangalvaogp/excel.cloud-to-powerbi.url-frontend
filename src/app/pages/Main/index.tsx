@@ -21,6 +21,7 @@ export default function MainPage() {
 
             return;
         }
+
         setShowModal(true);
     }
 
@@ -64,7 +65,10 @@ export default function MainPage() {
                             style={{ width: '50%', height: '6rem' }}
                             placeholder="Insira o código embed aqui"
                             value={urlOrigin}
-                            onChange={e => setUrlOrigin(e.target.value)}
+                            onChange={e => {
+                                setUrlOrigin(e.target.value)
+                                setUrlDestin("undefined")
+                            }}
                         />
                         <div>
                             <CButton
